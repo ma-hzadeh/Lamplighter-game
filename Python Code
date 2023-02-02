@@ -23,8 +23,7 @@ def get_player_move():
     lamplighter = int(input("Enter the lamp lighter position (0-3): "))
     lights = list(map(int, input("Enter the positions of the lit lamps(separated by spaces): ").strip().split()))
     return (lamplighter, lights)
-
-    
+   
 def play_game(board_length, p1_state, p2_state):
     p1_turn = True
     game_over = False
