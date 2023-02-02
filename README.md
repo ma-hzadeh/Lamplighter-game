@@ -1,4 +1,8 @@
 # Lamplighter-game
+The game is played by two players, referred to as Player 1 and Player 2. The game board consists of two bridges with lamp posts and the players are represented as lamplighters who can turn the lamps on or off as they cross the bridge.
+
+In the initial round, the players choose their starting positions and decide which lamps should be on or off. In subsequent rounds, the players take turns making moves until Player 1 achieves the same board as Player 2 or Player 2 prevents it. A player can either turn a lamp on or off in their current position or move to one of the closest lamps.
+////
 To implement the lamplighter game with 4 lamps and two players on a computer, a Python code can be written to simulate the game and its rules. The code should take into account the number of lamps, the starting positions of the lamps, the starting positions of the players, and the moves that each player can make. The code should also have the ability to keep track of the state of the game, including the positions of the lamps and the players, and determine when the game has ended.
 
 Here's a description of each function in the code:
