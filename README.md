@@ -1,4 +1,5 @@
 # Lamplighter-game
+To implement the lamplighter game with 4 lamps and two players on a computer, a Python code can be written to simulate the game and its rules. The code should take into account the number of lamps, the starting positions of the lamps, the starting positions of the players, and the moves that each player can make. The code should also have the ability to keep track of the state of the game, including the positions of the lamps and the players, and determine when the game has ended.
 
 Here's a description of each function in the code:
 
