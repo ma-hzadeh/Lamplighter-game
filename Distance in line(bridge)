@@ -26,8 +26,7 @@ def requiredMoveLine(p1_state, p2_state):
     
     # Calculate the distance from lamplighter 1 to lamplighter 2 distance = abs(lamplighter1 - lamplighter2)
     
-    # Calculate the distance from the lamplighters to the unique 
-    lamps that need more moves
+    # Calculate the distance from the lamplighters to the unique lamps that need more moves
     if minlight is not None:
         distance += abs((min(lamplighter1, lamplighter2) - minlight) * 2)
     if maxlight is not None:
