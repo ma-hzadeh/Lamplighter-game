@@ -28,13 +28,37 @@ def get_player_move():
     lights = list(map(int, input("Enter the positions of the lit lamps (separated by spaces): ").strip().split()))
     return (lamplighter, lights)
     
-def play_game(board_length, p1_state, p2_state):
+import random
+
+def play_game(board_length, p1_state=None, p2_state=None):
+    if not p1_state:
+        # Generate the initial state for player 1
+        p1_lamplighter = random.randint(1, board_length)
+        p1_lights = sorted(random.sample(range(1, board_length + 1), random.randint(1, board_length)))
+        p1_state = (p1_lamplighter, p1_lights)
+        
+    if not p2_state:
+        # Generate the initial state for player 2
+        p2_lamplighter = random.randint(1, board_length)
+        p2_lights = sorted(random.sample(range(1, board_length + 1), random.randint(1, board_length)))
+        p2_state = (p2_lamplighter, p2_lights)
+
+    
+    print("Player 1's initial state:")
+    print("Lamplighter position:", p1_lamplighter)
+    print("Lights positions:", p1_lights)
+    
+    print("\nPlayer 2's initial state:")
+    print("Lamplighter position:", p2_lamplighter)
+    print("Lights positions:", p2_lights)
+
+    # The rest of the code remains unchanged
     p1_turn = True
     game_over = False
 
     while not game_over:
         if p1_turn:
-            print("Player 1's turn")
+            print("\nPlayer 1's turn")
             # Get player 1's move
             p1_move = get_player_move()
             # Check if the move is valid
@@ -44,7 +68,7 @@ def play_game(board_length, p1_state, p2_state):
             # Update player 1's state
             p1_state = p1_move
         else:
-            print("Player 2's turn")
+            print("\nPlayer 2's turn")
             # Get player 2's move
             p2_move = get_player_move()
             # Check if the move is valid
@@ -59,9 +83,9 @@ def play_game(board_length, p1_state, p2_state):
         if game_over:
             print("The game is over!")
             if p1_turn:
-                print("Player 1 has_wons!")
+                print("Player 1 has won!")
             else:
-                print("Player 2 has_wons!")
+                print("Player 2 has won!")
             break
 
         # Switch to the next player's turn
@@ -69,4 +93,3 @@ def play_game(board_length, p1_state, p2_state):
 
     # Return the final state of the game
     return (p1_state, p2_state)
-
